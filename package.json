@@ -1,0 +1,36 @@
+{
+  "name": "js-tablesorter",
+  "url": "https://www.walkingclub.org.uk",
+  "repository": "github:saturdaywalkers/swc",
+  "license": "Copyright Saturday Walkers Club All Rights Reserved",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "js:lint": "eslint js --cache --cache-location /tmp/tablesorter/js",
+    "js:babel": "babel js --ignore '**/.DAV' --source-maps inline --out-file dist/js/js_tablesorter.js",
+    "js:minify": "terser --config-file js/.terser --output  dist/js/js_tablesorter_min.js -- dist/js/js_tablesorter.js",
+    "js:brotli": "brotli -Zf dist/js/tablesorter_min.js",
+    "js": "npm-run-all js:lint js:babel js:minify js:brotli",
+    "css:lint": "stylelint 'css/*.css'  --cache --cache-location /tmp/tablesorter/css",
+    "css:minify": "cleancss 'css/*.css' --source-map --source-map-inline-sources -o dist/css/js_tablesorter_min.css",
+    "css:brotli": "brotli -Zf dist/css/js_tablesorter_min.css",
+    "css": "npm-run-all css:lint css:minify css:brotli",
+    "build": "npm-run-all css js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "clean-css-cli": "^5.4.2",
+    "eslint": "^8.13.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.69.6",
+    "stylelint": "^16.0.1",
+    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "terser": "^5.5.1"
+  },
+  "dependencies": {
+    "globals": "^14.0.0"
+  }
+}

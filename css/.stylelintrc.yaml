@@ -1,0 +1,38 @@
+#
+# DELETE the cache if you make changes !!!
+#
+
+# [Dec-23] removed whitespace formatting rules as depreciated
+
+# recommended is minumin, standard has more rules
+
+extends								: stylelint-config-standard
+
+reportNeedlessDisables				: true
+reportInvalidScopeDisables			: true
+
+rules:
+  # whitespace rules
+  comment-empty-line-before			: null		# cant comment-out 1 line in a block aw/o extra spaces
+  comment-whitespace-inside			: null		# so can have spacing inside commented out blocks
+
+  # temp until split theme and core css
+  no-duplicate-selectors: null
+
+  # needed for bootstrap theme
+  declaration-block-single-line-max-declarations: null
+  value-keyword-case				: null
+  no-descending-specificity			: null
+
+  # rules i dont believe in
+  color-hex-length					: null		# color: aabbcc is ok, not abc
+  shorthand-property-no-redundant-values : null	# doesnt like padding: 0 0 5x 0 (the last 0) which I do
+
+  # rules i dont believe in, yet
+  color-function-notation			: [ 'legacy' ]	# other option is modern
+  alpha-value-notation				: [ 'number']			# test
+
+  # need to start using these !!!
+  selector-class-pattern			: null
+  selector-id-pattern				: null
+

@@ -1,0 +1,18 @@
+{
+  "parse": {
+    },
+  "compress": {
+    "drop_console":		false,
+    "warnings":			true
+    },   	
+  "mangle": {},
+  "output": {
+    "comments":			"some"
+    },
+  "sourceMap": {
+    "content":			"inline",
+	"filename":			"public_html/depository/site/swc.js.map",
+	"url":				"swc.js.map",
+	"includeSources":	true
+    }
+}
